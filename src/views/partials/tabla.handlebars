@@ -1,0 +1,68 @@
+{{!-- Tabla vista Alumnos que muestra a todos los alumnos de la base de datos junto a sus cursos --}}
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+
+<div class="overflow-x-auto">
+<table class="table table table-hover table-info table-striped mt-4 pt-4">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">Email</th>
+      <th scope="col">ID Curso</th>
+      <th scope="col">Cursos</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each alumnos}}
+    <tr>
+      <th scope="row">{{this.id}}</th>
+      <td>{{this.nombre}}</td>
+      <td>{{this.apellido}}</td>
+      <td>{{this.email}}</td>
+      <td>{{this.idCurso}}</td>
+      <td>{{this.curso}}</td>  
+      <td><button class="btn btn-danger eliminar" data-id="{{this.id}}" data-idcurso="{{this.idCurso}}" data-name="{{this.curso}}" ><i class="bi bi-trash-fill"></i> Desvincular Curso</button></td>
+
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+</div>
+
+
+<script>
+  $(document).ready(function () {
+    $('.table').DataTable({
+      "language": {
+        "sProcessing": "Procesando...",
+        "sLengthMenu": "Mostrar _MENU_ registros",
+        "sZeroRecords": "No se encontraron resultados",
+        "sEmptyTable": "Ningún dato disponible en esta tabla",
+        "sInfo": "",
+        "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+        "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+        "sInfoPostFix": "",
+        "sSearch": "Buscar:",
+        "sUrl": "",
+        "sInfoThousands": ",",
+        "sLoadingRecords": "Cargando...",
+        "oPaginate": {
+          "sFirst": "Primero",
+          "sLast": "Último",
+          "sNext": "Siguiente",
+          "sPrevious": "Anterior"
+        },
+        "oAria": {
+          "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+          "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+        }
+      }
+    });
+  });
+</script>

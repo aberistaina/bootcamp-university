@@ -1,0 +1,21 @@
+{{!-- Vista Home --}}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script defer src="../public/assets/js/inscripcion.js"></script>
+
+
+<div class="text-center m-4">
+    <img class="" src="../public/assets/img/bootcamp.gif" alt="">
+</div>
+
+
+
+{{#if cursos}}
+{{>card
+    cursos = cursos}}
+{{else}}
+<h3>No Hay Cursos Para Mostrar</h3>
+{{/if}}
+
+{{>modal}}
+
+

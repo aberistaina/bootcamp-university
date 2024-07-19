@@ -1,0 +1,22 @@
+{{!-- Card para mostrar cursos en vista HOME --}}
+
+<link rel="stylesheet" href="../../public/assets/css/card.css">
+
+<div class="row d-flex justify-content-between" id="card">
+{{#each cursos}}
+<div class="card col-4 my-2 mt-4" style="width: 18rem;">
+  <img src="{{this.imagen}}" class="card-img-top pt-3" alt="Imagen del curso" style="height: calc(40% - 1.25rem);">
+  <div class="card-body ">
+    <div>
+        <h5 class="card-title pt-2"><b>{{this.nombre}}</b></h5>
+        <p class="card-text pt-2">"{{this.descripcion}}"</p>
+        <p class="card-text pt-2"><b>Número Módulos:</b> {{this.cue}}</p>
+    </div>
+    <div class="inscribir-btn" id="inscribirme">
+        <button class="btn btn-primary inscribir botonesModal" id="botonModal" data-id="{{this.id}}" data-nombre="{{this.nombre}}" ><i class="bi bi-box-arrow-in-right"></i> Inscribirme</button>
+    </div>
+  </div>
+</div>
+{{/each}}
+</div>
+

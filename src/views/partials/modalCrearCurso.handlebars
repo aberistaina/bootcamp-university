@@ -1,0 +1,58 @@
+{{!-- Modal para Crear Curso --}}
+
+<div class="modal fade" id="createCurso" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5">Crear Un Curso</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="createCursoForm">     
+                <label for="createCursoNombre" class="form-label pt-2">Nombre</label>
+                <input type="text"  class="form-control" name="nombre" id="createCursoNombre" required>
+                <label for="createCursoCue" class="form-label pt-2">Cue</label>
+                <input type="number"  class="form-control" name="cue" id="createCursoCue" required min="5" max="20">
+                <label for="createCursoDescripcion" class="form-label pt-2">Descripcion</label>
+                <input type="text"  class="form-control" name="descripcion" id="createCursoDescripcion" required>
+                <label for="createCursoImagen" class="form-label pt-2">Link Imagen</label>
+                <input type="text"  class="form-control" name="imagen" id="createCursoImagen" required>
+                <input type="submit" class="btn btn-primary mt-3 d-flex" value="Crear">
+      </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{!-- Modal para Editar Curso --}}
+<div class="modal fade" id="updateCurso" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5">Crear Un Curso</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="updateCursoForm">     
+                <label for="updateCursoId" class="form-label pt-2">ID</label>
+                <input type="text"  class="form-control" name="id" id="updateCursoId" required disabled>
+                <label for="updateCursoNombre" class="form-label pt-2">Nombre</label>
+                <input type="text"  class="form-control" name="nombre" id="updateCursoNombre" required>
+                <label for="updateCursoCue" class="form-label pt-2">Cue</label>
+                <input type="number"  class="form-control" name="cue" id="updateCursoCue" required min="5" max="20">
+                <label for="updateCursoDescripcion" class="form-label pt-2">Descripcion</label>
+                <input type="text"  class="form-control" name="descripcion" id="updateCursoDescripcion" required>
+                <label for="updateCursoImagen" class="form-label pt-2">Link Imagen</label>
+                <input type="text"  class="form-control" name="imagen" id="updateCursoImagen" required>
+                <input type="submit" class="btn btn-primary mt-3 d-flex" value="Modificar">
+      </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+html{
+    height: auto;
+    min-height: 100%;
+}
+body{
+
+    background: radial-gradient(circle, #d1edf4, #0862c9);
+    
+}
+
+nav .active{
+    font-weight: 800;
+  }

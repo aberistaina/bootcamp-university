@@ -1,0 +1,16 @@
+.card-body{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.inscribir-btn{
+
+    display: flex !important;
+    justify-content: center !important;
+}
+
+
+

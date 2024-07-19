@@ -1,0 +1,71 @@
+<script defer src="../public/assets/js/manejador.js"></script>
+
+
+
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form class="input-group" id="filtrosForm">
+                <input type="text" class="form-control me-4" name="nombre" placeholder="Busqueda por Nombre">
+                <input type="text" class="form-control" name="email" placeholder="Busqueda por Email">
+                <input type="checkbox" class="btn-check" name="admin" id="btncheck1" autocomplete="off">
+                <label class="btn btn-outline-primary ms-2" for="btncheck1">Admin</label>
+
+
+                <div class="input-group-append">
+                    <button class="btn btn-primary ms-4" type="submit">Search</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<h2 class="text-center mt-4">Alumnos</h2>
+<table class="table table table-hover table-info table-striped mt-4 pt-4">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">Email</th>
+      <th scope="col">Admin</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody id="tablaManejador">
+  </tbody>
+</table>
+
+{{>modaleditar}}
+{{>modalCrearCurso}}
+
+
+<h2 class="text-center mt-4">Cursos</h2>
+<div class="d-flex justify-content-between"> 
+<button class="btn btn-success modificar mt-4" data-bs-toggle="modal" data-bs-target="#createCurso"><i class="bi bi-pencil-square"></i> Crear Nuevo Curso</button>
+</div>
+<table class="table table table-hover table-info table-striped mt-4 pt-4">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Cue</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each cursos}}
+    <tr>
+      <th scope="row">{{this.id}}</th>
+      <td>{{this.nombre}}</td>
+      <td>{{this.cue}}</td>
+      <td><button class="btn btn-success modificarCurso" data-bs-toggle="modal" data-bs-target="#updateCurso" data-nombre="{{this.nombre}}" data-cue="{{this.cue}}" data-imagen="{{this.imagen}}" data-descripcion= "{{this.descripcion}}" data-id="{{this.id}}"><i class="bi bi-pencil-square"></i> Modificar</button></td>
+      <td><button class="btn btn-danger eliminarCurso" data-id="{{this.id}}"><i class="bi bi-trash-fill"></i> Eliminar</button></td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

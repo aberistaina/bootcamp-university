@@ -1,0 +1,30 @@
+<script defer src="../public/assets/js/alumnos.js"></script>
+
+<div class="text-center m-4">
+    <img class="img-fluid" src="../public/assets/img/Lista de Alumnos y Cursos.gif" alt="">
+</div>
+
+
+<form id="inscribirAlumno">
+    <select class="form-select w-25 mb-4" id="alumnoEmail">
+        <option value="" selected disabled >Seleccione un Alumno</option>
+        {{#each alumnoSinCurso}}
+        <option class="emailAlumno" data-email="{{this.email}}" value="{{this.email}}">{{this.nombre}}</option>
+        {{/each}}
+    </select>
+    <select class="form-select w-50" id="cursoId">
+        <option value="" selected disabled>Seleccione un Curso</option>
+        {{#each cursos}}
+        <option data-id="{{this.id}}" class="idCurso" value="{{this.id}}">{{this.nombre}}</option>
+        {{/each}}
+    </select>
+    <button class="btn btn-primary my-3" ><i class="bi bi-box-arrow-in-right"></i> Inscribir Alumno</button>
+</form>
+
+{{!-- Tabla Con Alumnos--}}
+{{#if alumnos}}
+{{>tabla
+    alumnos = alumnos}}
+{{else}}
+<h3>No hay Alumnos para mostrar</h3>
+{{/if}}

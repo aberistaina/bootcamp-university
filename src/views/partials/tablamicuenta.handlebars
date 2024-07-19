@@ -1,0 +1,31 @@
+{{!-- Tabla utilizada en vista Mi Cuenta que muestra a un alumno en especifico, sus cursos y la posibilidad de desvincularse, modificar sus datos o eliminar cuenta --}}
+
+
+<div class="overflow-x-auto">
+  <table class="table mt-4">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Email</th>
+        <th scope="col">Cursos</th>
+        <th scope="col">Eliminar</th>
+      </tr>
+    </thead>
+    <tbody>
+  {{#with  alumno}}
+        {{#each cursos}}
+          <tr>
+            <th scope="row">{{../id}}</th>
+            <td>{{../nombre}}</td>
+            <td>{{../apellido}}</td>
+            <td>{{../email}}</td>
+            <td>{{nombre}}</td>
+            <td><button class="btn btn-danger eliminar" data-id="{{../id}}" data-idcurso="{{id}}" data-name="{{../nombre}}" ><i class="bi bi-trash-fill"></i> Eliminar</button></td>
+          </tr>
+          {{/each}}
+      {{/with}}
+    </tbody>
+  </table>
+</div>
